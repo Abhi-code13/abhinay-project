@@ -345,7 +345,7 @@ header {
 .arrow {
     max-width: 183px;
     object-fit: contain;
-    width : 100%;
+    width: 100%;
 }
 
 .child-work {
@@ -380,7 +380,150 @@ header {
     justify-content: center;
 }
 
+/* Numbers Section */
 
+.scroll {
+    border-top: 1px solid #122732;
+    border-bottom: 1px solid #122732;
+    min-height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scroll>.stats:nth-child(2) {
+    animation-delay: 2.5s;
+}
+
+.scroll>.stats:nth-child(3) {
+    animation-delay: 5s;
+}
+
+.scroll>.stats:nth-child(4) {
+    animation-delay: 7.5s;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    min-height: 150px;
+    position: absolute;
+    left: 100%;
+    animation: scrollX infinite 10s linear;
+}
+
+@keyframes scrollX {
+    to {
+        left: -10%;
+    }
+}
+
+.cmn-number-text {
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 40px;
+    color: #122732
+}
+
+.stats p {
+    font-size: 20px;
+    line-height: 40px;
+    white-space: nowrap;
+}
+
+/* Explore Section */
+
+.explore {
+    padding: 75px 0;
+}
+
+.explore-top {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.explore-top .cmn-para {
+    max-width: 486px;
+    text-align: center;
+}
+
+.explore .row {
+    justify-content: space-between;
+}
+
+.explr-img {
+    margin-bottom: 20px;
+}
+
+.explr-img img {
+    max-width: 456px;
+    object-fit: contain;
+    width: 100%;
+}
+
+.cmn-expl-txt {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 40px;
+    color: #122732;
+    margin-bottom: 20px;
+}
+
+.explr-btn {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.explr-btn>a {
+    padding: 15px 26px;
+    background-color: #122732;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/* Get-House Section */
+
+.get-house {
+    padding-bottom: 75px;
+}
+
+.get-house .row{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-house-content {
+    margin : 35px 0;
+}
+
+.top-house-content , .bottom-house-content {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.house-content p{
+    max-width: 480px;
+}
+
+.house-content img {
+    max-width: 50px;
+    object-fit: contain;
+    width: 100%;
+}
+
+.house-img {
+    max-width: 696px;
+    object-fit: contain;
+    width: 100%;
+}
 
 @media screen and (max-width : 992px) {
     .nav-toggler {
