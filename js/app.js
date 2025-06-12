@@ -70,5 +70,49 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   },
 });
-
 });
+
+const counters = document.querySelectorAll(".counter");
+  let hasAnimated = false;
+
+  const startCounting = () => {
+    counters.forEach((counter) => {
+      const updateCount = () => {
+        const target = +counter.getAttribute("data-target");
+        const count = +counter.innerText.replace(/[^\d]/g, ''); // Remove "K", "%" etc.
+        const increment = target / 200;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment) + getSuffix(counter.innerText);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target + getSuffix(counter.innerText);
+        }
+      };
+      updateCount();
+    });
+  };
+
+  const getSuffix = (text) => {
+    if (text.includes("K")) return "K";
+    if (text.includes("%")) return "%";
+    if (text.includes("+")) return "+";
+    return "";
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          startCounting();
+          hasAnimated = true;
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  const section = document.querySelector(".numbers"); // <-- FIXED
+  if (section) observer.observe(section);

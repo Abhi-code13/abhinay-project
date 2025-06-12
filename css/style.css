@@ -382,42 +382,14 @@ header {
 
 /* Numbers Section */
 
-.scroll {
+.numbers {
     border-top: 1px solid #122732;
     border-bottom: 1px solid #122732;
-    min-height: 150px;
-    position: relative;
-    overflow: hidden;
+    padding: 30px;
 }
 
-.scroll>.stats:nth-child(2) {
-    animation-delay: 2.5s;
-}
-
-.scroll>.stats:nth-child(3) {
-    animation-delay: 5s;
-}
-
-.scroll>.stats:nth-child(4) {
-    animation-delay: 7.5s;
-}
-
-.stats {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    min-height: 150px;
-    position: absolute;
-    left: 100%;
-    animation: scrollX infinite 10s linear;
-}
-
-@keyframes scrollX {
-    to {
-        left: -10%;
-    }
+.numbers .row {
+    justify-content: space-between;
 }
 
 .cmn-number-text {
@@ -520,7 +492,7 @@ header {
     width: 100%;
 }
 
-.house-img {
+.house-img img {
     max-width: 696px;
     object-fit: contain;
     width: 100%;
@@ -696,6 +668,175 @@ header {
     margin-bottom: 60px;
 }
 
+/* footer */
+
+footer {
+    padding: 50px 0;
+    background-color: #122732;
+    color: white;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.footer-top h2 {
+    font-weight: 600;
+    font-size: 32px;
+    color: #FFFFFF;
+}
+
+.footer-top p {
+    max-width: 263px;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    padding: 17px 30px;
+    max-width: 289px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #123344;
+    color: white;
+    outline: none;
+    border: none;
+}
+
+.newsletter-form input::placeholder {
+    color: #ffffff;
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+.newsletter-form button {
+    padding: 14.5px 30px;
+    max-width: 158px;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    background-color: #000000;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+footer .row {
+    border-top: 1px solid rgba(255, 255, 255, 0.60);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.60);
+    padding: 50px 0;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.foot-1 p {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.col-25 {
+    width: 25%;
+}
+
+.child-foot h3 {
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 15px
+}
+
+.location p {
+    max-width: 240px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.foot-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+}
+
+.img>img {
+    max-width: 96px;
+    object-fit: contain;
+    width: 100%;
+}
+
+.foot-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.child-foot ul {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.child-foot ul li a {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.bottom-foot {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+.bottom-right-foot {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bottom-right-foot p {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.foot-txt {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.fa-brands {
+    display: inline-block;
+    font-size: 25px;
+    border-radius: 50%;
+    padding: 13px;
+    background-color: #123344;
+}
+
 @media screen and (max-width : 992px) {
     .nav-toggler {
         display: block;
@@ -743,5 +884,890 @@ header {
     .viewed-img img {
         max-width: 100vw;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .banner-section {
+        padding: 160px 0;
+    }
+
+    .banner-content h1 {
+        font-size: 52px;
+        line-height: 64px;
+    }
+
+    .banner-content p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .blog-swiper .swiper-slide {
+        width: 45%;
+    }
+
+    .cmn-blog-txt {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .blog-txt a {
+        font-size: 18px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-top h2 {
+        font-size: 28px;
+    }
+
+    .footer-top p {
+        font-size: 16px;
+        max-width: 90%;
+    }
+
+    .newsletter-form {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .newsletter-form input {
+        padding: 16px 20px;
+    }
+
+    .newsletter-form button {
+        padding: 14px;
+    }
+
+    footer .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .col-25 {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foot-1 {
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .foot-images {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .bottom-foot {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .bottom-right-foot {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .location {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .child-house img {
+        max-width: 500px;
+    }
+
+    .child-house-content a {
+        padding: 10px 28px;
+        font-size: 15px;
+    }
+
+    .col-23 {
+        width: 45%;
+        margin-right: 0;
+    }
+
+    .col-15 {
+        display: none;
+    }
+
+    .child-work {
+        padding: 20px;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .cmn-work-head {
+        font-size: 22px;
+    }
+
+    .child-work p {
+        font-size: 15px;
+        margin: 0 auto;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .our-work .row {
+        justify-content: space-evenly;
+    }
+
+    .numbers .row {
+        gap: 20px;
+    }
+
+    .cmn-number-text {
+        font-size: 38px;
+        line-height: 36px;
+        text-align: center;
+    }
+
+    .stats p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .stats {
+        width: 45%;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .col-50 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .find-house>div>div.row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .child-house-content {
+        gap: 24px;
+        text-align: center;
+    }
+
+    .child-house-content a {
+        padding: 10px 24px;
+        font-size: 14px;
+        margin: 0 auto;
+    }
+
+    .child-house img {
+        max-width: 100%;
+    }
+
+    .our-work .row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .col-23 {
+        width: 100%;
+    }
+
+    .child-work {
+        margin-top: 30px;
+        padding: 16px;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .child-work .img-1 {
+        max-width: 40px;
+        margin: 0 auto;
+    }
+
+    .cmn-work-head {
+        font-size: 20px;
+    }
+
+    .child-work p {
+        font-size: 15px;
+        margin: 0 auto;
+    }
+
+    .house-img {
+        width: 100%;
+
+    }
+
+    .house-content p {
+        font-size: 12px;
+    }
+
+    .house-content img {
+        max-width: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner-section {
+        padding: 120px 0;
+    }
+
+    .banner-content {
+        gap: 20px;
+    }
+
+    .banner-content h1 {
+        font-size: 42px;
+        line-height: 52px;
+        text-align: center;
+    }
+
+    .banner-content p {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    .banner-section .nav-btn {
+        text-align: center;
+    }
+
+    .nav-btn a {
+        padding: 15px 25px;
+        font-size: 12px;
+    }
+
+    .col-4 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .cmn-head {
+        font-size: 32px;
+    }
+
+    .cmn-para {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .child-viewed {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .cmn-view-txt {
+        font-size: 24px;
+    }
+
+    .cmn-view2-txt {
+        font-size: 20px;
+    }
+
+    .view-btn-1,
+    .view-btn-2 {
+        padding: 12px 24px;
+        font-size: 14px;
+        width: 48%;
+    }
+
+    .view-btns {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .text-1 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .view-property>a {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .col-50 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .find-house>div>div.row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .child-house-content {
+        gap: 20px;
+    }
+
+    .child-house-content a {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .child-house img {
+        max-width: 100%;
+    }
+
+    .stats {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cmn-number-text {
+        font-size: 36px;
+    }
+
+    .stats p {
+        font-size: 17px;
+        line-height: 30px;
+    }
+
+    .explore {
+        padding: 50px 0;
+    }
+
+    .explore-top {
+        margin-bottom: 40px;
+    }
+
+    .child-explore {
+        max-width: 100%;
+        gap: 16px;
+    }
+
+    .explore .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .col-4 {
+        width: 80%;
+    }
+
+    .cmn-expl-txt {
+        font-size: 26px;
+        line-height: 32px;
+    }
+
+    .explr-btn {
+        margin-top: 40px;
+    }
+
+    .explr-btn>a {
+        font-size: 16px;
+        padding: 12px 22px;
+    }
+
+    .testimonials {
+        padding-bottom: 50px;
+    }
+
+    .testimonialSwiper {
+        padding: 30px 0;
+    }
+
+    .testimonial-card {
+        padding: 15px 20px;
+    }
+
+    .slide-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .slide-text h4 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .slide-text p {
+        font-size: 14px;
+        line-height: 22px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .stars img {
+        max-width: 100px;
+    }
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .blogs {
+        padding-bottom: 50px;
+    }
+
+    .blogs-top h2 {
+        font-size: 24px;
+    }
+
+    .blogs-top p {
+        font-size: 18px;
+    }
+
+    .blog-card {
+        padding: 14px;
+    }
+
+    .cmn-blog-txt {
+        font-size: 17px;
+        max-width: 100%;
+    }
+
+    .blog-txt p {
+        font-size: 14px;
+    }
+
+    .blog-txt a {
+        font-size: 16px;
+    }
+
+    .blog-image {
+        max-width: 100%;
+        border-radius: 20px;
+    }
+
+    .col-25 {
+        width: 100%;
+    }
+
+    .child-foot h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .child-foot ul {
+        align-items: center;
+    }
+
+    .child-foot ul li a {
+        font-size: 16px;
+    }
+
+    .location p,
+    .foot-1 p,
+    .bottom-right-foot p {
+        font-size: 15px;
+    }
+
+    .foot-txt {
+        font-size: 18px;
+    }
+
+    .fa-brands {
+        font-size: 22px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .get-house {
+        padding-bottom: 50px;
+    }
+
+    .top-house-content,
+    .bottom-house-content {
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    .house-content img {
+        max-width: 35px;
+    }
+
+    .house-content p {
+        line-height: 1.6;
+    }
+
+    .house-img {
+        width: 100%;
+    }
+
+    .testimonial-card {
+        padding: 10px 15px;
+    }
+
+    .slide-text h4 {
+        font-size: 16px;
+    }
+
+    .slide-text p {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px !important;
+        height: 10px !important;
+        margin: 0 3px;
+    }
+
+    .swiper-pagination-bullet-active {
+        transform: scale(1.2);
+    }
+
+    .blogs-top h2 {
+        font-size: 20px;
+    }
+
+    .blogs-top p {
+        font-size: 16px;
+    }
+
+    .cmn-blog-txt {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .blog-txt a {
+        font-size: 15px;
+    }
+
+    .blog-txt p {
+        font-size: 13.5px;
+    }
+
+    .footer-top h2 {
+    font-size: 24px;
+  }
+
+  .footer-top p {
+    font-size: 15px;
+  }
+
+  .newsletter-form input {
+    padding: 14px 15px;
+    font-size: 14px;
+  }
+
+  .newsletter-form button {
+    padding: 13px 15px;
+    font-size: 15px;
+  }
+
+  .foot-1 p,
+  .location p,
+  .child-foot ul li a,
+  .bottom-right-foot p {
+    font-size: 14px;
+  }
+
+  .foot-images {
+    gap: 14px;
+  }
+
+  .fa-brands {
+    font-size: 20px;
+    padding: 9px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+    .banner-section {
+        padding: 100px 0;
+    }
+
+    .banner-content h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .banner-content p {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .child-work {
+        padding: 14px;
+        gap: 14px;
+    }
+
+    .cmn-work-head {
+        font-size: 18px;
+    }
+
+    .child-work p {
+        font-size: 14px;
+    }
+
+    .cmn-number-text {
+        font-size: 32px;
+        line-height: 28px;
+    }
+
+    .stats p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .numbers {
+        padding: 25px 15px;
+    }
+
+    .explore {
+        padding: 40px 0;
+    }
+
+    .explore-top {
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+
+    .cmn-expl-txt {
+        font-size: 22px;
+        line-height: 28px;
+        margin-bottom: 8px;
+    }
+
+    .explr-btn>a {
+        font-size: 15px;
+        padding: 10px 18px;
+    }
+
+}
+
+@media (max-width: 375px) {
+  .footer-top h2 {
+    font-size: 22px;
+  }
+
+  .footer-top p {
+    font-size: 14px;
+    max-width: 95%;
+  }
+
+  .newsletter-form input {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .newsletter-form button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .foot-1,
+  .child-foot ul {
+    gap: 20px;
+  }
+
+  .child-foot h3 {
+    font-size: 18px;
+  }
+
+  .foot-txt {
+    font-size: 16px;
+  }
+
+  .fa-brands {
+    font-size: 18px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+    .banner-section {
+        padding: 80px 0;
+    }
+
+    .banner-content {
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .banner-content h1 {
+        font-size: 26px;
+        line-height: 34px;
+        text-align: center;
+    }
+
+    .banner-content p {
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .cmn-head {
+        font-size: 24px;
+    }
+
+    .cmn-para {
+        font-size: 14px;
+    }
+
+    .cmn-view-txt {
+        font-size: 20px;
+    }
+
+    .cmn-view2-txt {
+        font-size: 18px;
+    }
+
+    .view-btn-1,
+    .view-btn-2 {
+        padding: 10px;
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .view-btns {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .child-viewed {
+        padding: 12px;
+    }
+
+    .text-1 {
+        font-size: 12px;
+    }
+
+    .view-property>a {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    .child-house-content {
+        gap: 16px;
+    }
+
+    .child-house-content a {
+        padding: 8px 16px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .find-house {
+        padding-bottom: 50px;
+    }
+
+    .cmn-work-head {
+        font-size: 17px;
+    }
+
+    .child-work p {
+        font-size: 13px;
+    }
+
+    .our-work {
+        padding-bottom: 50px;
+    }
+
+    .get-house {
+        padding-bottom: 40px;
+    }
+
+    .top-house-content,
+    .bottom-house-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .house-content {
+        flex: unset;
+        width: 100%;
+    }
+
+    .house-content p {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .house-content img {
+        max-width: 30px;
+        width: 100%;
+    }
+
+    .house-img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    .test-head h2 {
+        font-size: 20px;
+    }
+
+    .test-head p {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    .slide-text p {
+        font-size: 12px;
+    }
+
+    .avatar {
+        width: 45px;
+        height: 45px;
+    }
+
+    .stars img {
+        max-width: 80px;
+    }
+
+    .blogs {
+        padding-bottom: 40px;
+    }
+
+    .blogs-top p {
+        font-size: 14px;
+    }
+
+    .blog-card {
+        padding: 12px;
+        border-radius: 15px;
+    }
+
+    .cmn-blog-txt {
+        font-size: 15px;
+    }
+
+    .blog-txt a {
+        font-size: 14px;
+        gap: 4px;
+    }
+
+    .blog-txt p {
+        font-size: 13px;
+    }
+
+    .blog-image {
+        border-radius: 15px;
     }
 }
