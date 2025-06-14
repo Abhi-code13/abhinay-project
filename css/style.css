@@ -16,6 +16,7 @@
 html,
 body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -115,15 +116,34 @@ header {
 
 .banner-section {
     position: relative;
-    background: url("../assets/images/hero-bg.svg") no-repeat center/cover;
-    padding: 217px 0;
+}
+
+.hero-swiper {
+    width: 100%;
+}
+
+.hero-swiper .swiper-slide {
+    width: 100%;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    display: flex;
+    align-items: center;
 }
 
 .banner-content {
-    max-width: 650px;
     display: flex;
     flex-direction: column;
     gap: 30px;
+}
+
+.content-1 {
+    padding: 217px 0;
+}
+
+.content-2,
+.content-3 {
+    padding: 177px 0;
 }
 
 .banner-content h1 {
@@ -138,6 +158,7 @@ header {
     font-size: 20px;
     line-height: 30px;
     color: white;
+    max-width: 650px;
 }
 
 /* MOST VIEWED */
@@ -167,6 +188,7 @@ header {
 
 .col-4 {
     width: 32%;
+    padding: 0 15px;
 }
 
 .viewed-img>img {
@@ -278,6 +300,7 @@ header {
 
 .col-50 {
     width: 50%;
+    padding: 0 15px;
 }
 
 .find-house {
@@ -286,6 +309,7 @@ header {
 
 .find-house>div>div.row {
     align-items: center;
+    justify-content: space-between;
 }
 
 .child-house img {
@@ -329,10 +353,12 @@ header {
 
 .col-23 {
     width: 23.33%;
+    padding: 0 15px;
 }
 
 .col-15 {
     width: 15%;
+    padding: 0 15px;
 }
 
 .child-work .img-1 {
@@ -627,12 +653,10 @@ header {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.blog-image {
-    max-width: 424px;
-    border-radius: 25px;
-}
 
 .blog-image>img {
+    max-width: 424px;
+    border-radius: 25px;
     width: 100%;
     object-fit: contain;
 }
@@ -679,6 +703,8 @@ footer {
 .footer-top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 50px;
 }
 
@@ -756,6 +782,7 @@ footer .row {
 
 .col-25 {
     width: 25%;
+    padding: 0 15px;
 }
 
 .child-foot h3 {
@@ -780,7 +807,7 @@ footer .row {
 .foot-images {
     display: flex;
     flex-wrap: wrap;
-    gap: 19px;
+    gap: 17px;
 }
 
 .img>img {
@@ -798,6 +825,7 @@ footer .row {
 .child-foot ul {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 17px;
 }
 
@@ -809,7 +837,9 @@ footer .row {
 
 .bottom-foot {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     padding-top: 50px;
 }
 
@@ -837,43 +867,89 @@ footer .row {
     background-color: #123344;
 }
 
-@media screen and (max-width : 992px) {
+/* Header Section */
+@media screen and (max-width : 991px) {
     .nav-toggler {
         display: block;
         margin-left: auto;
     }
 
     .navbar-collapse {
-        display: none;
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px 0;
         position: absolute;
-        top: 50px;
+        display: none;
         left: 0;
         right: 0;
-        background: white;
-        z-index: -1;
+        top: 50px;
+        padding: 15px 0;
     }
 
-    .navbar-collapse>ul {
+    .navbar-collapse ul li a {
+        color: #123344;
+    }
+
+    .navbar-collapse,
+    .navbar-collapse ul {
         flex-direction: column;
+        align-items: center;
         gap: 20px;
-
+        background: white;
     }
 
-    .navbar-collapse>ul>li>a {
-        color: black;
-    }
-
-    header .nav-btn {
+    .navbar-collapse .nav-btn {
         text-align: center;
+        margin-top: 10px;
     }
+
+    .banner-content {
+        padding: 100px 0;
+    }
+
+    .banner-content h1 {
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+    .banner-content p {
+        font-size: 16px;
+    }
+
 }
 
-@media screen and (max-width : 1300px) {
+@media screen and (max-width : 768px) {
 
-    .most-viewed>div>div.row {
+    .navbar-collapse,
+    .navbar-collapse ul {
+        gap: 15px;
+    }
+
+    .navbar-collapse ul li a {
+        font-size: 14px;
+    }
+
+    .nav-btn a {
+        font-size: 14px;
+        padding: 13px 25px;
+    }
+
+    .banner-content {
+        padding: 90px 0;
+    }
+
+    .banner-content h1 {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+    .content-1 h1 {
+        width: 70vw;
+    }
+
+    .banner-content p {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .most-viewed .row {
         display: none;
     }
 
@@ -881,300 +957,83 @@ footer .row {
         display: block !important;
     }
 
-    .viewed-img img {
-        max-width: 100vw;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .banner-section {
-        padding: 160px 0;
-    }
-
-    .banner-content h1 {
-        font-size: 52px;
-        line-height: 64px;
-    }
-
-    .banner-content p {
-        font-size: 18px;
-        line-height: 28px;
-    }
-
-    .blog-swiper .swiper-slide {
-        width: 45%;
-    }
-
-    .cmn-blog-txt {
-        font-size: 18px;
-        line-height: 24px;
-    }
-
-    .blog-txt a {
-        font-size: 18px;
-    }
-
-    .footer-top {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .footer-top h2 {
-        font-size: 28px;
-    }
-
-    .footer-top p {
-        font-size: 16px;
-        max-width: 90%;
-    }
-
-    .newsletter-form {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .newsletter-form input,
-    .newsletter-form button {
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .newsletter-form input {
-        padding: 16px 20px;
-    }
-
-    .newsletter-form button {
-        padding: 14px;
-    }
-
-    footer .row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 40px;
-    }
-
-    .col-25 {
-        width: 45%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .foot-1 {
-        align-items: center;
-        text-align: center;
-        gap: 25px;
-    }
-
-    .foot-images {
-        justify-content: center;
-        gap: 16px;
-    }
-
-    .bottom-foot {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .bottom-right-foot {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .location {
-        margin: 0 auto;
-    }
-}
-
-@media screen and (max-width: 1199px) {
-    .child-house img {
-        max-width: 500px;
-    }
-
-    .child-house-content a {
-        padding: 10px 28px;
-        font-size: 15px;
-    }
-
-    .col-23 {
-        width: 45%;
-        margin-right: 0;
-    }
-
-    .col-15 {
-        display: none;
-    }
-
-    .child-work {
-        padding: 20px;
-        gap: 20px;
-        align-items: center;
-    }
-
-    .cmn-work-head {
-        font-size: 22px;
-    }
-
-    .child-work p {
-        font-size: 15px;
-        margin: 0 auto;
-    }
-
-    .arrow {
-        display: none;
-    }
-
-    .our-work .row {
-        justify-content: space-evenly;
-    }
-
-    .numbers .row {
-        gap: 20px;
-    }
-
-    .cmn-number-text {
-        font-size: 38px;
-        line-height: 36px;
-        text-align: center;
-    }
-
-    .stats p {
-        font-size: 18px;
-        text-align: center;
-    }
-
-    .stats {
-        width: 45%;
-        text-align: center;
-    }
 
 }
 
-@media screen and (max-width: 991px) {
-    .col-50 {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .find-house>div>div.row {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .child-house-content {
-        gap: 24px;
-        text-align: center;
-    }
-
-    .child-house-content a {
-        padding: 10px 24px;
-        font-size: 14px;
-        margin: 0 auto;
-    }
-
-    .child-house img {
-        max-width: 100%;
-    }
-
-    .our-work .row {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .col-23 {
-        width: 100%;
-    }
-
-    .child-work {
-        margin-top: 30px;
-        padding: 16px;
-        gap: 16px;
-        text-align: center;
-    }
-
-    .child-work .img-1 {
-        max-width: 40px;
-        margin: 0 auto;
-    }
-
-    .cmn-work-head {
-        font-size: 20px;
-    }
-
-    .child-work p {
-        font-size: 15px;
-        margin: 0 auto;
-    }
-
-    .house-img {
-        width: 100%;
-
-    }
-
-    .house-content p {
-        font-size: 12px;
-    }
-
-    .house-content img {
-        max-width: 40px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .banner-section {
-        padding: 120px 0;
-    }
-
+@media (max-width: 576px) {
     .banner-content {
-        gap: 20px;
+        padding: 80px 0;
     }
 
     .banner-content h1 {
-        font-size: 42px;
-        line-height: 52px;
-        text-align: center;
+        font-size: 24px;
+        line-height: 32px;
     }
 
     .banner-content p {
-        font-size: 16px;
-        line-height: 24px;
-        text-align: center;
-    }
-
-    .banner-section .nav-btn {
-        text-align: center;
+        font-size: 13px;
+        line-height: 18px;
     }
 
     .nav-btn a {
-        padding: 15px 25px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width : 320px) {
+
+    .navbar-collapse,
+    .navbar-collapse ul {
+        gap: 10px;
+    }
+
+    .navbar-collapse ul li a {
         font-size: 12px;
     }
 
-    .col-4 {
-        width: 100%;
-        margin-bottom: 30px;
+    .nav-btn a {
+        font-size: 14px;
+        padding: 12px 23px;
     }
 
+    .banner-content {
+        padding: 60px 0;
+    }
+
+    .banner-content h1 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .banner-content p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+}
+
+@media screen and (max-width : 1360px) {
+    .view-btns {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .view-btn-1,
+    .view-btn-2 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width : 1024px) {
     .cmn-head {
-        font-size: 32px;
+        font-size: 30px;
+        margin-bottom: 10px;
     }
 
     .cmn-para {
-        font-size: 16px;
-        padding: 0 10px;
-    }
-
-    .child-viewed {
-        padding: 16px;
-        border-radius: 20px;
+        font-size: 15px;
     }
 
     .cmn-view-txt {
@@ -1183,151 +1042,209 @@ footer .row {
 
     .cmn-view2-txt {
         font-size: 20px;
+        margin: 10px 0;
     }
 
-    .view-btn-1,
-    .view-btn-2 {
-        padding: 12px 24px;
-        font-size: 14px;
-        width: 48%;
-    }
-
-    .view-btns {
-        gap: 10px;
-        flex-wrap: wrap;
+    .small-txt {
+        font-size: 12px;
     }
 
     .text-1 {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+        margin: 8px 0 10px 0;
     }
 
-    .view-property>a {
-        font-size: 16px;
-        padding: 12px 20px;
+    .most-viewed {
+        padding: 50px 0;
     }
 
-    .col-50 {
-        width: 100%;
+    .viewed-top {
         margin-bottom: 30px;
+
     }
 
-    .find-house>div>div.row {
-        flex-direction: column;
-        gap: 30px;
+    .find-house {
+        padding-bottom: 50px;
     }
 
     .child-house-content {
         gap: 20px;
     }
 
-    .child-house-content a {
-        padding: 10px 20px;
-        font-size: 14px;
+    .our-work {
+        padding-bottom: 50px;
     }
 
-    .child-house img {
-        max-width: 100%;
+    .col-23 {
+        width: 23.33%;
     }
 
-    .stats {
-        width: 100%;
-        text-align: center;
+    .col-15 {
+        width: 10%;
+    }
+
+    .child-work {
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .cmn-work-head {
+        font-size: 20px;
+    }
+
+    .child-work p {
+        font-size: 15px;
+    }
+
+    .our-work .row {
+        justify-content: space-between;
+    }
+
+    .numbers {
+        padding: 28px;
     }
 
     .cmn-number-text {
-        font-size: 36px;
+        font-size: 40px;
+        line-height: 38px;
     }
 
     .stats p {
-        font-size: 17px;
-        line-height: 30px;
+        font-size: 18px;
+        line-height: 38px;
     }
+
 
     .explore {
         padding: 50px 0;
     }
 
     .explore-top {
-        margin-bottom: 40px;
+        gap: 10px;
+        margin-bottom: 30px;
     }
 
-    .child-explore {
-        max-width: 100%;
-        gap: 16px;
+    .explore-top .cmn-para {
+        max-width: 486px;
+        text-align: center;
     }
 
     .explore .row {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 0 10px;
+        justify-content: space-between;
     }
 
-    .col-4 {
-        width: 80%;
+    .explr-img {
+        margin-bottom: 18px;
     }
 
     .cmn-expl-txt {
-        font-size: 26px;
-        line-height: 32px;
+        font-size: 35px;
+        line-height: 38px;
+        color: #122732;
+        margin-bottom: 18px;
     }
 
     .explr-btn {
-        margin-top: 40px;
+        text-align: center;
+        margin-top: 30px;
     }
 
-    .explr-btn>a {
-        font-size: 16px;
-        padding: 12px 22px;
+
+    .get-house {
+        padding-bottom: 50px;
     }
+
+
+    .top-house-content {
+        margin: 30px 0;
+    }
+
+    .top-house-content,
+    .bottom-house-content {
+        gap: 40px;
+    }
+
+    .house-content p {
+        max-width: 480px;
+    }
+
+    .house-content img {
+        max-width: 50px;
+        object-fit: contain;
+        width: 100%;
+    }
+
+    .house-img img {
+        max-width: 696px;
+        object-fit: contain;
+        width: 100%;
+    }
+
+
 
     .testimonials {
         padding-bottom: 50px;
     }
 
     .testimonialSwiper {
-        padding: 30px 0;
+        padding: 38px 0;
+
+    }
+
+    .testimonialSwiper .swiper-wrapper {
+        margin-bottom: 50px;
+        width: 100% !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 12px !important;
+        height: 12px !important;
+        margin: 0 4px;
     }
 
     .testimonial-card {
-        padding: 15px 20px;
-    }
-
-    .slide-images {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        padding: 14px 28px;
     }
 
     .slide-text h4 {
         font-size: 18px;
-        text-align: center;
+        margin: 8px 0;
     }
 
     .slide-text p {
         font-size: 14px;
-        line-height: 22px;
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .stars img {
-        max-width: 100px;
+        line-height: 25px;
     }
 
     .avatar {
         width: 50px;
         height: 50px;
+        margin-bottom: 8px;
     }
+
+    .stars img {
+        max-width: 110px;
+    }
+
+    .test-head {
+        margin-bottom: 27px;
+        text-align: center;
+    }
+
+    .test-head h2 {
+        margin-bottom: 10px;
+    }
+
 
     .blogs {
         padding-bottom: 50px;
     }
 
+    .blogs-top {
+        margin-bottom: 30px;
+    }
+
     .blogs-top h2 {
-        font-size: 24px;
+        margin-bottom: 14px;
     }
 
     .blogs-top p {
@@ -1339,8 +1256,9 @@ footer .row {
     }
 
     .cmn-blog-txt {
-        font-size: 17px;
-        max-width: 100%;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 15px;
     }
 
     .blog-txt p {
@@ -1348,35 +1266,117 @@ footer .row {
     }
 
     .blog-txt a {
+        gap: 5px;
+        font-weight: 500;
+        font-size: 20px;
+        color: #252525;
+        margin-top: 18px;
+    }
+
+    .blog-swiper .swiper-wrapper {
+        margin-bottom: 40px;
+    }
+
+
+    footer {
+        padding: 50px 0;
+    }
+
+    .footer-top {
+        margin-bottom: 40px;
+    }
+
+    .footer-top h2 {
+        font-weight: 600;
+        font-size: 30px;
+        color: #FFFFFF;
+    }
+
+    .footer-top p {
+        font-size: 16px;
+        margin-top: 18px;
+    }
+
+    .newsletter-form {
+        gap: 6px;
+        margin-top: 18px;
+    }
+
+    .newsletter-form input {
+        padding: 16px 29px;
+    }
+
+    .newsletter-form input::placeholder {
+        font-size: 14px;
+    }
+
+    .newsletter-form button {
+        padding: 14px 29px;
+        font-size: 17px;
+    }
+
+    footer .row {
+        padding: 45px 0;
+    }
+
+    .phone {
+        gap: 14px;
+    }
+
+    .foot-1 p {
         font-size: 16px;
     }
 
-    .blog-image {
-        max-width: 100%;
-        border-radius: 20px;
+    .email {
+        gap: 14px;
     }
 
     .col-25 {
-        width: 100%;
+        width: 25%;
     }
 
     .child-foot h3 {
         font-size: 20px;
-        text-align: center;
+        margin-bottom: 14px;
+    }
+
+    .location {
+        gap: 14px
+    }
+
+    .location p {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .foot-images {
+        gap: 18px;
+    }
+
+    .foot-1 {
+        gap: 29px;
     }
 
     .child-foot ul {
-        align-items: center;
+        gap: 16px;
     }
 
     .child-foot ul li a {
         font-size: 16px;
     }
 
-    .location p,
-    .foot-1 p,
+    .bottom-foot {
+        padding-top: 45px;
+    }
+
+    .bottom-right-foot {
+        display: flex;
+        align-items: center;
+        gap: 19px;
+    }
+
     .bottom-right-foot p {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .foot-txt {
@@ -1384,240 +1384,16 @@ footer .row {
     }
 
     .fa-brands {
-        font-size: 22px;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 576px) {
-    .get-house {
-        padding-bottom: 50px;
-    }
-
-    .top-house-content,
-    .bottom-house-content {
-        gap: 15px;
-        padding: 0 15px;
-    }
-
-    .house-content img {
-        max-width: 35px;
-    }
-
-    .house-content p {
-        line-height: 1.6;
-    }
-
-    .house-img {
-        width: 100%;
-    }
-
-    .testimonial-card {
-        padding: 10px 15px;
-    }
-
-    .slide-text h4 {
-        font-size: 16px;
-    }
-
-    .slide-text p {
-        font-size: 13px;
-        line-height: 20px;
-    }
-
-    .swiper-pagination-bullet {
-        width: 10px !important;
-        height: 10px !important;
-        margin: 0 3px;
-    }
-
-    .swiper-pagination-bullet-active {
-        transform: scale(1.2);
-    }
-
-    .blogs-top h2 {
-        font-size: 20px;
-    }
-
-    .blogs-top p {
-        font-size: 16px;
-    }
-
-    .cmn-blog-txt {
-        font-size: 16px;
-        line-height: 22px;
-    }
-
-    .blog-txt a {
-        font-size: 15px;
-    }
-
-    .blog-txt p {
-        font-size: 13.5px;
-    }
-
-    .footer-top h2 {
-    font-size: 24px;
-  }
-
-  .footer-top p {
-    font-size: 15px;
-  }
-
-  .newsletter-form input {
-    padding: 14px 15px;
-    font-size: 14px;
-  }
-
-  .newsletter-form button {
-    padding: 13px 15px;
-    font-size: 15px;
-  }
-
-  .foot-1 p,
-  .location p,
-  .child-foot ul li a,
-  .bottom-right-foot p {
-    font-size: 14px;
-  }
-
-  .foot-images {
-    gap: 14px;
-  }
-
-  .fa-brands {
-    font-size: 20px;
-    padding: 9px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-    .banner-section {
-        padding: 100px 0;
-    }
-
-    .banner-content h1 {
-        font-size: 32px;
-        line-height: 40px;
-    }
-
-    .banner-content p {
-        font-size: 15px;
-        line-height: 22px;
-    }
-
-    .child-work {
-        padding: 14px;
-        gap: 14px;
-    }
-
-    .cmn-work-head {
-        font-size: 18px;
-    }
-
-    .child-work p {
-        font-size: 14px;
-    }
-
-    .cmn-number-text {
-        font-size: 32px;
-        line-height: 28px;
-    }
-
-    .stats p {
-        font-size: 16px;
-        line-height: 28px;
-    }
-
-    .numbers {
-        padding: 25px 15px;
-    }
-
-    .explore {
-        padding: 40px 0;
-    }
-
-    .explore-top {
-        margin-bottom: 30px;
-        padding: 0 10px;
-    }
-
-    .cmn-expl-txt {
-        font-size: 22px;
-        line-height: 28px;
-        margin-bottom: 8px;
-    }
-
-    .explr-btn>a {
-        font-size: 15px;
-        padding: 10px 18px;
-    }
-
-}
-
-@media (max-width: 375px) {
-  .footer-top h2 {
-    font-size: 22px;
-  }
-
-  .footer-top p {
-    font-size: 14px;
-    max-width: 95%;
-  }
-
-  .newsletter-form input {
-    padding: 12px;
-    font-size: 13px;
-  }
-
-  .newsletter-form button {
-    padding: 12px;
-    font-size: 14px;
-  }
-
-  .foot-1,
-  .child-foot ul {
-    gap: 20px;
-  }
-
-  .child-foot h3 {
-    font-size: 18px;
-  }
-
-  .foot-txt {
-    font-size: 16px;
-  }
-
-  .fa-brands {
-    font-size: 18px;
-    padding: 8px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-    .banner-section {
-        padding: 80px 0;
-    }
-
-    .banner-content {
-        gap: 15px;
-        padding: 0 10px;
-    }
-
-    .banner-content h1 {
-        font-size: 26px;
-        line-height: 34px;
-        text-align: center;
-    }
-
-    .banner-content p {
-        font-size: 14px;
-        line-height: 20px;
-        text-align: center;
-    }
-
-    .cmn-head {
         font-size: 24px;
+        padding: 12px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .cmn-head {
+        font-size: 26px;
+        margin-bottom: 8px;
     }
 
     .cmn-para {
@@ -1630,119 +1406,210 @@ footer .row {
 
     .cmn-view2-txt {
         font-size: 18px;
+        margin: 8px 0;
     }
 
-    .view-btn-1,
-    .view-btn-2 {
-        padding: 10px;
-        font-size: 13px;
-        width: 100%;
-    }
-
-    .view-btns {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-    }
-
-    .child-viewed {
-        padding: 12px;
+    .small-txt {
+        font-size: 11px;
     }
 
     .text-1 {
+        margin: 6px 0 8px 0;
+    }
+
+    .most-viewed {
+        padding: 40px 0;
+    }
+
+    .viewed-top {
+        margin-bottom: 25px;
+    }
+
+    .view-btn-1,
+    .view-btn-2,
+    .view-property>a {
+        padding: 10px 30px;
         font-size: 12px;
     }
 
-    .view-property>a {
-        font-size: 14px;
-        padding: 10px 16px;
-    }
-
-    .child-house-content {
-        gap: 16px;
-    }
-
-    .child-house-content a {
-        padding: 8px 16px;
-        font-size: 13px;
-        text-align: center;
+    .view-property {
+        margin-top: 30px;
     }
 
     .find-house {
-        padding-bottom: 50px;
+        padding-bottom: 30px;
     }
 
-    .cmn-work-head {
-        font-size: 17px;
+    .child-house-content {
+        gap: 10px;
     }
 
-    .child-work p {
-        font-size: 13px;
+    .child-house-content a {
+        padding: 10px 30px;
+        font-size: 12px;
     }
 
     .our-work {
-        padding-bottom: 50px;
+        padding-bottom: 30px;
+    }
+
+    .col-23 {
+        width: 45%;
+    }
+
+    .col-15 {
+        display: none;
+    }
+
+    .child-work {
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .cmn-work-head {
+        font-size: 15px;
+    }
+
+    .child-work p {
+        font-size: 12px;
+    }
+
+    .numbers {
+        padding: 25px;
+    }
+
+    .cmn-number-text {
+        font-size: 35px;
+        line-height: 35px;
+    }
+
+    .stats p {
+        font-size: 15px;
+        line-height: 35px;
+    }
+
+    .explore {
+        padding: 30px 0;
+    }
+
+    .explore-top {
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+
+    .explr-img {
+        margin-bottom: 15px;
+    }
+
+    .cmn-expl-txt {
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .explr-btn {
+        margin-top: 20px;
+    }
+
+    .explr-btn>a {
+        padding: 10px 25px;
+        font-size: 12px;
     }
 
     .get-house {
-        padding-bottom: 40px;
+        padding-bottom: 30px;
+    }
+
+
+    .top-house-content {
+        margin: 22px 0;
     }
 
     .top-house-content,
     .bottom-house-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-        padding: 0 10px;
-    }
-
-    .house-content {
-        flex: unset;
-        width: 100%;
+        gap: 30px;
     }
 
     .house-content p {
-        max-width: 100%;
-        font-size: 14px;
-        line-height: 1.5;
+        max-width: 480px;
     }
 
     .house-content img {
-        max-width: 30px;
+        max-width: 45px;
+    }
+
+    .house-img img {
+        max-width: 696px;
+        object-fit: contain;
         width: 100%;
     }
 
-    .house-img {
-        max-width: 100%;
-        width: 100%;
-        height: auto;
+    .house-content .cmn-para {
+        font-size: 12px;
     }
 
-    .test-head h2 {
-        font-size: 20px;
+    .testimonials {
+        padding-bottom: 30px;
     }
 
-    .test-head p {
-        font-size: 13px;
-        padding: 0 10px;
+    .testimonialSwiper {
+        padding: 35px 0;
+
+    }
+
+    .testimonialSwiper .swiper-wrapper {
+        margin-bottom: 40px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    .testimonial-card {
+        padding: 12px 24px;
+    }
+
+    .slide-text h4 {
+        font-size: 15px;
+        margin: 6px 0;
     }
 
     .slide-text p {
         font-size: 12px;
+        line-height: 18px;
+        max-width: 50vw;
     }
 
     .avatar {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
+        margin-bottom: 6px;
     }
 
     .stars img {
-        max-width: 80px;
+        max-width: 100px;
+    }
+
+    .test-head {
+        margin-bottom: 22px;
+        text-align: center;
+    }
+
+    .test-head h2 {
+        margin-bottom: 8px;
     }
 
     .blogs {
-        padding-bottom: 40px;
+        padding-bottom: 30px;
+    }
+
+    .blogs-top {
+        margin-bottom: 25px;
+    }
+
+    .blogs-top h2 {
+        margin-bottom: 10px;
     }
 
     .blogs-top p {
@@ -1750,24 +1617,838 @@ footer .row {
     }
 
     .blog-card {
-        padding: 12px;
-        border-radius: 15px;
+        padding: 10px;
     }
 
     .cmn-blog-txt {
-        font-size: 15px;
-    }
-
-    .blog-txt a {
         font-size: 14px;
-        gap: 4px;
+        line-height: 18px;
+        margin-bottom: 10px;
     }
 
     .blog-txt p {
+        font-size: 12px;
+    }
+
+    .blog-txt a {
+        gap: 5px;
+        font-size: 16px;
+        margin-top: 14px;
+    }
+
+    .blog-swiper .swiper-wrapper {
+        margin-bottom: 35px;
+    }
+
+    .footer {
+        padding: 25px 0;
+    }
+
+    .footer-top {
+        margin-bottom: 30px;
+    }
+
+    .footer-top h2 {
+        font-size: 25px;
+    }
+
+    .footer-top p {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .newsletter-form {
+        gap: 5px;
+        margin-top: 15px;
+    }
+
+    .newsletter-form input {
+        padding: 15px 25px;
+    }
+
+    .newsletter-form input::placeholder {
+        font-size: 12px;
+    }
+
+    .newsletter-form button {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    footer .row {
+        padding: 35px 0;
+    }
+
+    .phone {
+        gap: 12px;
+    }
+
+    .foot-1 p {
+        font-size: 14px;
+    }
+
+    .email {
+        gap: 10px;
+    }
+
+    .col-25 {
+        width: 50%;
+    }
+
+    .child-foot h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .location {
+        gap: 10px
+    }
+
+    .location p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .foot-images {
+        gap: 15px;
+    }
+
+    .foot-1 {
+        gap: 20px;
+    }
+
+    .child-foot ul {
+        gap: 12px;
+    }
+
+    .child-foot ul li a {
+        font-size: 14px;
+    }
+
+    .bottom-foot {
+        padding-top: 45px;
+
+    }
+
+    .bottom-right-foot {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .bottom-right-foot p {
+        font-size: 14px;
+    }
+
+    .foot-txt {
+        font-size: 14px;
+    }
+
+    .fa-brands {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    footer .row {
+        row-gap: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .cmn-head {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .cmn-para {
         font-size: 13px;
     }
 
-    .blog-image {
-        border-radius: 15px;
+    .cmn-view-txt {
+        font-size: 18px;
+    }
+
+    .cmn-view2-txt {
+        font-size: 16px;
+        margin: 6px 0;
+    }
+
+    .small-txt {
+        font-size: 10px;
+    }
+
+    .text-1 {
+        margin: 5px 0 6px 0;
+    }
+
+    .most-viewed {
+        padding: 30px 0;
+    }
+
+    .viewed-top {
+        margin-bottom: 20px;
+    }
+
+    .view-btn-1,
+    .view-btn-2,
+    .view-property>a {
+        padding: 8px 25px;
+        font-size: 11px;
+    }
+
+    .view-property {
+        margin-top: 25px;
+    }
+
+    .col-50 {
+        width: 100%;
+    }
+
+    .find-house {
+        padding-bottom: 25px;
+    }
+
+    .child-house-content {
+        gap: 8px;
+    }
+
+    .child-house-content a {
+        padding: 8px 25px;
+        font-size: 11px;
+        margin: 0 auto;
+    }
+
+
+    .our-work {
+        padding-bottom: 25px;
+    }
+
+    .col-23 {
+        width: 100%;
+    }
+
+    .child-work {
+        gap: 13px;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .cmn-work-head {
+        font-size: 14px;
+    }
+
+    .child-work p {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .numbers {
+        padding: 20px;
+    }
+
+    .numbers .row {
+        justify-content: space-evenly;
+        text-align: center;
+    }
+
+    .stats {
+        width: 50%;
+    }
+
+    .cmn-number-text {
+        font-size: 35px;
+        line-height: 35px;
+    }
+
+    .stats p {
+        font-size: 15px;
+        line-height: 35px;
+    }
+
+    .explore {
+        padding: 25px 0;
+    }
+
+    .col-4 {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .explr-img img {
+        max-width: 300px;
+    }
+
+    .explore-top {
+        gap: 6px;
+        margin-bottom: 20px;
+    }
+
+    .explore .row {
+        gap: 10px;
+    }
+
+    .explr-img {
+        margin-bottom: 10px;
+    }
+
+    .cmn-expl-txt {
+        font-size: 20px;
+        line-height: 25px;
+        margin-bottom: 8px;
+    }
+
+    .explr-btn {
+        margin-top: 15px;
+    }
+
+    .explr-btn>a {
+        padding: 8px 20px;
+        font-size: 11px;
+    }
+
+    .get-house {
+        padding-bottom: 25px;
+    }
+
+
+    .top-house-content {
+        margin: 20px 0;
+    }
+
+    .top-house-content,
+    .bottom-house-content {
+        gap: 25px;
+    }
+
+    .house-content img {
+        max-width: 40px;
+    }
+
+    .house-content .cmn-para {
+        font-size: 12px;
+    }
+
+    .get-house .row {
+        gap: 15px
+    }
+
+    .get-house .cmn-head {
+        text-align: center;
+    }
+
+
+    .testimonials {
+        padding-bottom: 25px;
+    }
+
+    .testimonialSwiper {
+        padding: 30px 0;
+
+    }
+
+    .testimonialSwiper .swiper-wrapper {
+        margin-bottom: 35px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 8px !important;
+        height: 8px !important;
+    }
+
+    .testimonial-card {
+        padding: 10px 20px;
+    }
+
+    .slide-text h4 {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .slide-text p {
+        font-size: 10px;
+        line-height: 18px;
+        max-width: 100vw;
+    }
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 6px;
+    }
+
+    .stars img {
+        max-width: 100px;
+    }
+
+    .test-head {
+        margin-bottom: 22px;
+        text-align: center;
+    }
+
+    .test-head h2 {
+        margin-bottom: 8px;
+    }
+
+
+    .blogs {
+        padding-bottom: 25px;
+    }
+
+    .blogs-top {
+        margin-bottom: 18px;
+    }
+
+    .blogs-top h2 {
+        margin-bottom: 8px;
+    }
+
+    .blogs-top p {
+        font-size: 12px;
+    }
+
+    .blog-card {
+        padding: 8px;
+    }
+
+    .cmn-blog-txt {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 8px;
+    }
+
+    .blog-txt p {
+        font-size: 10px;
+    }
+
+    .blog-txt a {
+        gap: 4px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .blog-swiper .swiper-wrapper {
+        margin-bottom: 30px;
+    }
+
+    .blog-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .footer {
+        padding: 20px 0;
+    }
+
+    .footer-top {
+        margin-bottom: 25px;
+        text-align: center;
+        justify-content: center;
+        row-gap: 5px;
+    }
+
+    .footer-top h2 {
+        font-size: 20px;
+    }
+
+    .footer-top p {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .newsletter-form {
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .newsletter-form input {
+        padding: 13px 22px;
+    }
+
+    .newsletter-form input::placeholder {
+        font-size: 10px;
+    }
+
+    .newsletter-form button {
+        padding: 10px 20px;
+        font-size: 10px;
+    }
+
+    footer .row {
+        padding: 30px 0;
+    }
+
+    .phone {
+        gap: 10px;
+    }
+
+    .foot-1 p {
+        font-size: 10px;
+    }
+
+    .email {
+        gap: 8px;
+    }
+
+    .col-25 {
+        width: 50%;
+    }
+
+    .child-foot h3 {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .location {
+        gap: 8px
+    }
+
+    .location p {
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+    .foot-images {
+        gap: 10px;
+    }
+
+    .foot-images img{
+        max-width: 60px;
+    }
+
+    .foot-1 {
+        gap: 18px;
+    }
+
+    .child-foot ul {
+        gap: 10px;
+    }
+
+    .child-foot ul li a {
+        font-size: 10px;
+    }
+
+    .bottom-foot {
+        padding-top: 35px;
+
+    }
+
+    .bottom-right-foot {
+        gap: 10px;
+    }
+
+    .bottom-right-foot p {
+        font-size: 10px;
+    }
+
+    .foot-txt {
+        font-size: 10px;
+    }
+
+    .fa-brands {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    footer .row {
+        row-gap: 15px;
+    }
+
+}
+
+@media screen and (max-width : 575px) {
+    .viewed-img img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .cmn-head {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .cmn-para {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .cmn-view-txt {
+        font-size: 16px;
+    }
+
+    .cmn-view2-txt {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .small-txt {
+        font-size: 9px;
+    }
+
+    .text-1 {
+        margin: 4px 0 5px 0;
+    }
+
+    .most-viewed {
+        padding: 20px 0;
+    }
+
+    .viewed-top {
+        margin-bottom: 15px;
+    }
+
+    .view-btn-1,
+    .view-btn-2,
+    .view-property>a {
+        padding: 6px 18px;
+        font-size: 10px;
+    }
+
+    .view-property {
+        margin-top: 20px;
+    }
+
+    .child-house-content a {
+        padding: 6px 18px;
+        font-size: 10px;
+    }
+
+    .numbers {
+        padding: 15px;
+    }
+
+    .cmn-number-text {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .stats p {
+        font-size: 12px;
+        line-height: 30px;
+    }
+
+    .explore {
+        padding: 20px 0;
+    }
+
+    .explr-img img {
+        max-width: 200px;
+    }
+
+    .explore-top {
+        gap: 5px;
+        margin-bottom: 15px;
+    }
+
+    .explr-img {
+        margin-bottom: 8px;
+    }
+
+    .cmn-expl-txt {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 5px;
+    }
+
+    .explr-btn {
+        margin-top: 10px;
+    }
+
+    .explr-btn>a {
+        padding: 6px 18px;
+        font-size: 10px;
+    }
+
+    .get-house {
+        padding-bottom: 20px;
+    }
+
+
+    .top-house-content {
+        margin: 15px 0;
+    }
+
+    .top-house-content,
+    .bottom-house-content {
+        gap: 20px;
+    }
+
+    .house-content img {
+        max-width: 40px;
+    }
+
+    .house-content .cmn-para {
+        font-size: 10px;
+    }
+
+    .get-house .row {
+        gap: 10px
+    }
+
+
+    .testimonials {
+        padding-bottom: 20px;
+    }
+
+    .testimonialSwiper {
+        padding: 25px 0;
+
+    }
+
+    .testimonialSwiper .swiper-wrapper {
+        margin-bottom: 30px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 8px !important;
+        height: 8px !important;
+    }
+
+    .testimonial-card {
+        padding: 10px 20px;
+    }
+
+    .slide-text h4 {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .slide-text p {
+        font-size: 10px;
+        line-height: 18px;
+        max-width: 100vw;
+    }
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 6px;
+    }
+
+    .stars img {
+        max-width: 100px;
+    }
+
+    .test-head {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+
+    .footer {
+        padding: 15px 0;
+    }
+
+    .footer-top {
+        margin-bottom: 20px;
+    }
+
+    .footer-top h2 {
+        font-size: 15px;
+    }
+
+    .footer-top p {
+        font-size: 10px;
+        margin-top: 10px;
+    }
+
+    .newsletter-form {
+        gap: 5px;
+        margin-top: 8px;
+    }
+
+    .newsletter-form input {
+        padding: 13px 22px;
+    }
+
+    .newsletter-form input::placeholder {
+        font-size: 10px;
+    }
+
+    .newsletter-form button {
+        padding: 10px 20px;
+        font-size: 10px;
+    }
+
+    footer .row {
+        padding: 28px 0;
+    }
+
+    .phone {
+        gap: 10px;
+    }
+
+    .foot-1 p {
+        font-size: 10px;
+    }
+
+    .email {
+        gap: 8px;
+    }
+
+    .col-25 {
+        width: 100%;
+    }
+
+    .child-foot h3 {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .location {
+        gap: 8px
+    }
+
+    .location p {
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+    .foot-images {
+        gap: 10px;
+        justify-content: space-evenly;
+    }
+
+    .foot-1 {
+        gap: 18px;
+    }
+
+    .child-foot ul {
+        gap: 5px;
+        
+    }
+
+    .child-foot ul li a {
+        font-size: 10px;
+    }
+
+    .bottom-foot {
+        padding-top: 35px;
+
+    }
+
+    .bottom-right-foot {
+        gap: 8px;
+    }
+
+    .bottom-right-foot p {
+        font-size: 10px;
+    }
+
+    .foot-txt {
+        font-size: 10px;
+    }
+
+    .fa-brands {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    footer .row {
+        row-gap: 12px;
+        text-align: center;
     }
 }
