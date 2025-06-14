@@ -187,7 +187,7 @@ header {
 }
 
 .col-4 {
-    width: 32%;
+    width: 33%;
     padding: 0 15px;
 }
 
@@ -257,7 +257,7 @@ header {
 .view-btns {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    text-align: center;
 }
 
 .view-btn-1 {
@@ -1057,9 +1057,12 @@ footer .row {
         padding: 50px 0;
     }
 
+    .view-btns {
+        text-align: center;
+    }
+
     .viewed-top {
         margin-bottom: 30px;
-
     }
 
     .find-house {
@@ -1075,11 +1078,11 @@ footer .row {
     }
 
     .col-23 {
-        width: 23.33%;
+        width: 25%;
     }
 
     .col-15 {
-        width: 10%;
+        width: 12.5%;
     }
 
     .child-work {
@@ -1331,10 +1334,6 @@ footer .row {
         gap: 14px;
     }
 
-    .col-25 {
-        width: 25%;
-    }
-
     .child-foot h3 {
         font-size: 20px;
         margin-bottom: 14px;
@@ -1351,6 +1350,10 @@ footer .row {
 
     .foot-images {
         gap: 18px;
+    }
+
+    .foot-images img {
+        max-width: 70px;
     }
 
     .foot-1 {
@@ -1428,8 +1431,9 @@ footer .row {
     .view-btn-1,
     .view-btn-2,
     .view-property>a {
-        padding: 10px 30px;
+        padding: 10px 0;
         font-size: 12px;
+        text-align: center;
     }
 
     .view-property {
@@ -1454,7 +1458,7 @@ footer .row {
     }
 
     .col-23 {
-        width: 45%;
+        width: 50%;
     }
 
     .col-15 {
@@ -1711,6 +1715,10 @@ footer .row {
 
     .foot-images {
         gap: 15px;
+    }
+
+    .foot-images img {
+        max-width: 60px;
     }
 
     .foot-1 {
@@ -2114,8 +2122,8 @@ footer .row {
         gap: 10px;
     }
 
-    .foot-images img{
-        max-width: 60px;
+    .foot-images img {
+        max-width: 40px;
     }
 
     .foot-1 {
@@ -2418,7 +2426,7 @@ footer .row {
 
     .child-foot ul {
         gap: 5px;
-        
+
     }
 
     .child-foot ul li a {
@@ -2450,5 +2458,26 @@ footer .row {
     footer .row {
         row-gap: 12px;
         text-align: center;
+    }
+
+    .foot-images img {
+        max-width: 35px;
+    }
+
+    .foot-1 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .foot-1 img {
+        max-width: 35px;
+    }
+}
+
+@media screen and (max-width : 765px) {
+    .blog-image>img {
+        max-width: 100%;
     }
 }
