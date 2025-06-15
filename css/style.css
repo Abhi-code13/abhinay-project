@@ -1431,7 +1431,7 @@ footer .row {
     .view-btn-1,
     .view-btn-2,
     .view-property>a {
-        padding: 10px 0;
+        padding: 10px 20px;
         font-size: 12px;
         text-align: center;
     }
