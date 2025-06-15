@@ -2038,11 +2038,15 @@ footer .row {
     .blog-swiper .swiper-wrapper {
         margin-bottom: 30px;
     }
-
+/* 
     .blog-card {
         display: flex;
         flex-direction: column;
         align-items: center;
+    } */
+
+    .blog-image>img {
+        max-width: 100%;
     }
 
 
