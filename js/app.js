@@ -16,7 +16,6 @@ $(document).ready(function(){
 // });
 
 
-// swiper viewed
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -30,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       delay: 4000,
       disableOnInteraction: false,
     },
+    speed: 2500,
     fadeEffect: {
       crossFade: true, // Optional: smooth transition between slides
     },
