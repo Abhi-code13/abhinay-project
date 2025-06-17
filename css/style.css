@@ -77,7 +77,51 @@ header {
 .navbar-collapse ul {
     margin: 0 auto;
     gap: 85px;
+    width: fit-content;
+    height: fit-content;
 }
+
+/* nav-links effect */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list a {
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    color: #1e1e1e;
+    padding: 6px 0;
+    transition: color 0.3s ease;
+}
+
+/* Hover text color */
+.nav-list a:hover {
+    color: #268391;
+}
+
+/* Underline effect */
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #268391;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-list a:hover::after {
+    transform: scaleX(1);
+}
+
 
 .nav-log img {
     max-width: 81px;
@@ -247,6 +291,7 @@ header {
     background: white;
     border-radius: 25px;
     padding: 18px 15px;
+    height: 100%;       
 }
 
 
@@ -287,6 +332,7 @@ header {
     font-weight: 600;
     font-size: 30px;
     color: #123344;
+    white-space: nowrap;
 }
 
 .cmn-view2-txt {
@@ -314,6 +360,7 @@ header {
     overflow: hidden;
     text-decoration: none;
     z-index: 1;
+    white-space: nowrap;
 }
 
 .view-btn-1:hover {
@@ -353,12 +400,14 @@ header {
     overflow: hidden;
     text-decoration: none;
     z-index: 1;
+    white-space: nowrap;
 }
 
 .view-btn-2:hover {
     color: #ffffff;
     outline: 2px solid #122732;
     box-shadow: 4px 5px 17px -4px #08202c;
+
 }
 
 .view-btn-2::before {
@@ -390,7 +439,6 @@ header {
     color: white;
     font-weight: 500;
     font-size: 18px;
-
 }
 
 
@@ -581,7 +629,7 @@ header {
     margin-top: 50px;
 }
 
-.explr-btn .btn-hover-effect{
+.explr-btn .btn-hover-effect {
     padding: 15px 26px;
     background-color: #122732;
     border-radius: 8px;
@@ -757,7 +805,6 @@ header {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-
 .blog-image>img {
     max-width: 424px;
     border-radius: 25px;
@@ -786,6 +833,44 @@ header {
     font-size: 20px;
     color: #252525;
     margin-top: 20px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.link-text {
+    position: relative;
+    display: inline-block;
+}
+
+.link-text::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #252525;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.blog-txt a:hover .link-text::after {
+    transform: scaleX(1);
+}
+
+.blog-txt a:hover {
+    transform: translateY(-2px);
+}
+
+.blog-txt a img {
+    transition: transform 0.3s ease;
+}
+
+.blog-txt a:hover img {
+    transform: translateX(5px);
 }
 
 .blog-swiper .swiper-slide {
@@ -796,12 +881,42 @@ header {
     margin-bottom: 60px;
 }
 
+.blog-swiper .swiper-wrapper:hover > .swiper-slide {
+  transition: 0.3s ease;
+}
+
+.blog-swiper .swiper-wrapper:hover > .swiper-slide:not(:hover) {
+  filter: blur(4px);
+  transform: scaleX(0.95); 
+}
+
+.blog-swiper .swiper-slide:hover {
+  transform: scaleX(1.05); 
+  z-index: 2;
+}
+
 /* footer */
 
 footer {
     padding: 50px 0;
     background-color: #122732;
     color: white;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    /* Required for transform to work correctly */
+}
+
+footer a:hover {
+    transform: scale(1.2);
+}
+
+.child-foot a:hover {
+    color: #268391;
 }
 
 .footer-top {
@@ -850,7 +965,7 @@ footer {
     font-size: 14px;
 }
 
-.newsletter-form button {
+.bttn {
     padding: 14.5px 30px;
     max-width: 158px;
     border-radius: 10px;
@@ -859,7 +974,37 @@ footer {
     background-color: #000000;
     font-weight: 500;
     font-size: 18px;
+    position: relative;
+    overflow: hidden;
+    background-size: 400%;
 }
+
+.bttn:hover::before {
+    transform: scaleX(1);
+}
+
+.button-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    right: 10px;
+}
+
+.bttn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: #123344;
+    transition: all 0.475s;
+}
+
+
 
 footer .row {
     border-top: 1px solid rgba(255, 255, 255, 0.60);
@@ -969,6 +1114,28 @@ footer .row {
     border-radius: 50%;
     padding: 13px;
     background-color: #123344;
+    transition: all 0.4s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.fa-brands:hover {
+    transform: scale(1.2);
+    border-radius: 15px;
+}
+
+.fa-facebook:hover {
+    background-color: #1877F2;
+}
+
+.fa-x-twitter:hover {
+    background-color: #000000;
+}
+
+.fa-instagram:hover {
+    background-color: #d62976;
+}
+
+.fa-linkedin:hover {
+    background-color: #0072b1;
 }
 
 /* Header Section */
@@ -1151,7 +1318,7 @@ footer .row {
     }
 
     .cmn-view-txt {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .cmn-view2-txt {
@@ -1160,7 +1327,7 @@ footer .row {
     }
 
     .small-txt {
-        font-size: 12px;
+        font-size: 9px;
     }
 
     .text-1 {
@@ -1527,7 +1694,7 @@ footer .row {
     }
 
     .small-txt {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .text-1 {
@@ -1542,9 +1709,10 @@ footer .row {
         margin-bottom: 25px;
     }
 
-    .view-btn-1,
-    .view-btn-2,
-    .view-property>a {
+    .view-btn-1 ,
+    .view-btn-2 ,
+    .view-property .btn-hover-effect
+    {
         padding: 10px 20px;
         font-size: 12px;
         text-align: center;
@@ -1562,7 +1730,7 @@ footer .row {
         gap: 10px;
     }
 
-    .child-house-content a {
+    .child-house-content .btn-hover-effect {
         padding: 10px 30px;
         font-size: 12px;
     }
@@ -1629,7 +1797,7 @@ footer .row {
         margin-top: 20px;
     }
 
-    .explr-btn>a {
+    .explr-btn .btn-hover-effect {
         padding: 10px 25px;
         font-size: 12px;
     }
@@ -1913,7 +2081,7 @@ footer .row {
 
     .view-btn-1,
     .view-btn-2,
-    .view-property>a {
+    .view-property .btn-hover-effect {
         padding: 8px 25px;
         font-size: 11px;
     }
@@ -1934,7 +2102,7 @@ footer .row {
         gap: 8px;
     }
 
-    .child-house-content a {
+    .child-house-content .btn-hover-effect {
         padding: 8px 25px;
         font-size: 11px;
         margin: 0 auto;
@@ -2024,7 +2192,7 @@ footer .row {
         margin-top: 15px;
     }
 
-    .explr-btn>a {
+    .explr-btn .btn-hover-effect {
         padding: 8px 20px;
         font-size: 11px;
     }
@@ -2329,7 +2497,7 @@ footer .row {
 
     .view-btn-1,
     .view-btn-2,
-    .view-property>a {
+    .view-property .btn-hover-effect {
         padding: 6px 18px;
         font-size: 10px;
     }
@@ -2338,7 +2506,7 @@ footer .row {
         margin-top: 20px;
     }
 
-    .child-house-content a {
+    .child-house-content .btn-hover-effect {
         padding: 6px 18px;
         font-size: 10px;
     }
@@ -2384,7 +2552,7 @@ footer .row {
         margin-top: 10px;
     }
 
-    .explr-btn>a {
+    .explr-btn .btn-hover-effect {
         padding: 6px 18px;
         font-size: 10px;
     }
