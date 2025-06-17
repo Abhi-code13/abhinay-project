@@ -194,14 +194,18 @@ header {
 
 .btn-hover-effect:hover::before {
     width: 250%;
-}
+} 
 
 .banner-section {
-    position: relative;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.banner-section .swiper-slide {
-    min-height: 100vh;
+.hero-swiper,
+.swiper-wrapper,
+.swiper-slide {
+  height: 100%; 
 }
 
 .hero-swiper {
@@ -1238,8 +1242,8 @@ footer .row {
         padding: 80px 0;
     } */
 
-    .banner-section .swiper-slide {
-        min-height: 70vh;
+    .banner-section {
+        height: 70vh;
     }
 
     .banner-content h1 {
@@ -1279,8 +1283,8 @@ footer .row {
         padding: 60px 0;
     } */
 
-    .banner-section .swiper-slide {
-        min-height: 60vh;
+    .banner-section {
+        height: 60vh;
     }
 
     .banner-content h1 {
@@ -1462,8 +1466,6 @@ footer .row {
         object-fit: contain;
         width: 100%;
     }
-
-
 
     .testimonials {
         padding-bottom: 50px;

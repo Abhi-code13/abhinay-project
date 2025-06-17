@@ -116,9 +116,9 @@ header {
 }
 
 
-.banner-section {
-    padding: 168px 0;
-    background : url("../assets/images/about-us-banner.svg") no-repeat center/cover;
+.banner3-section {
+    padding: 150px 0 50px 0;
+    background : url("../assets/images/hero-bg-3.svg") no-repeat center/cover;
 }
 
 .banner-content h1{
@@ -130,16 +130,16 @@ header {
 
 /* blogs pagination */
 
-.col-4 {
+.col-33 {
     width : 33%;
     padding: 0 15px;
 }
 
-.blogs {
+.blog {
     padding: 75px 0;
 }
 
-.blogs .row {
+.blog .row {
     row-gap: 46px;
 }
 
@@ -394,3 +394,66 @@ footer .row {
     padding: 13px;
     background-color: #123344;
 }
+
+@media screen and (max-width : 991px) {
+    .nav-toggler {
+        display: block;
+        margin-left: auto;
+    }
+
+    .navbar-collapse {
+        position: absolute;
+        display: none;
+        left: 0;
+        right: 0;
+        top: 50px;
+        padding: 15px 0;
+    }
+
+    .navbar-collapse ul li a {
+        color: #123344;
+    }
+
+    .navbar-collapse,
+    .navbar-collapse ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background: white;
+    }
+
+    .navbar-collapse .nav-btn {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /* .banner-content {
+        padding: 100px 0;
+    } */
+
+    .banner-content h1 {
+        font-size: 40px;
+        line-height: 60px;
+    }
+
+    .banner-content p {
+        font-size: 16px;
+    }
+
+    .banner3-section {
+        height: 60vh;
+    }
+
+}
+
+@media screen and (max-width : 768px) {
+
+    .col-33 {
+        width: 50%;
+    }
+}
+ @media screen and (max-width : 425px) {
+     .col-33 {
+        width: 100%;
+     }
+ }
