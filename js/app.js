@@ -6,6 +6,11 @@ $(document).ready(function(){
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  AOS.init();
+})
+
+
 
 
 // const hamburger = document.querySelector('.nav-toggler');
@@ -158,5 +163,5 @@ const observer = new IntersectionObserver(
   }
 );
 
-const section = document.querySelector(".numbers"); // <-- FIXED
+const section = document.querySelector(".numbers"); 
 if (section) observer.observe(section);
