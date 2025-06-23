@@ -117,11 +117,11 @@ header {
 
 
 .banner3-section {
-    padding: 150px 0 50px 0;
-    background : url("../assets/images/hero-bg-3.svg") no-repeat center/cover;
+    padding: 168px 0;
+    background: url("../assets/images/hero-bg-3.svg") no-repeat center/cover;
 }
 
-.banner-content h1{
+.banner-content h1 {
     font-size: 68px;
     line-height: 81px;
     font-weight: 700;
@@ -131,7 +131,7 @@ header {
 /* blogs pagination */
 
 .col-33 {
-    width : 33%;
+    width: 33%;
     padding: 0 15px;
 }
 
@@ -195,6 +195,20 @@ header {
     margin-top: 20px;
 }
 
+.blog .row:hover>.col-33 .blog-card {
+    transition: 0.3s ease;
+}
+
+.blog .row:hover>.col-33:not(:hover) .blog-card {
+    filter: blur(4px);
+    transform: scaleX(0.95);
+}
+
+.blog .col-33:hover .blog-card {
+    transform: scaleX(1.05);
+    z-index: 2;
+}
+
 .pagination {
     display: flex;
     align-items: center;
@@ -210,7 +224,7 @@ header {
     border-radius: 8px;
 }
 
-.pagination a{
+.pagination a {
     font-family: "Poppins", sans-serif;
     font-size: 15.26px;
     font-weight: 600;
@@ -395,65 +409,39 @@ footer .row {
     background-color: #123344;
 }
 
-@media screen and (max-width : 991px) {
-    .nav-toggler {
-        display: block;
-        margin-left: auto;
-    }
-
-    .navbar-collapse {
-        position: absolute;
-        display: none;
-        left: 0;
-        right: 0;
-        top: 50px;
-        padding: 15px 0;
-    }
-
-    .navbar-collapse ul li a {
-        color: #123344;
-    }
-
-    .navbar-collapse,
-    .navbar-collapse ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        background: white;
-    }
-
-    .navbar-collapse .nav-btn {
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    /* .banner-content {
-        padding: 100px 0;
-    } */
-
-    .banner-content h1 {
-        font-size: 40px;
-        line-height: 60px;
-    }
-
-    .banner-content p {
-        font-size: 16px;
-    }
-
-    .banner3-section {
-        height: 60vh;
-    }
-
-}
-
 @media screen and (max-width : 768px) {
 
     .col-33 {
         width: 50%;
     }
+
+    .blog .row {
+        row-gap: 20px;
+    }
+
+    .pagination {
+        margin-top: 40px;
+    }
+
+    .blog {
+        padding: 50px 0;
+    }
 }
- @media screen and (max-width : 425px) {
-     .col-33 {
+
+@media screen and (max-width : 425px) {
+    .col-33 {
         width: 100%;
-     }
- }
+    }
+
+    .blog .row {
+        row-gap: 10px;
+    }
+
+    .pagination {
+        margin-top: 20px;
+    }
+
+    .blog {
+        padding: 30px 0;
+    }
+}

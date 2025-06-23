@@ -4,6 +4,8 @@ $(document).ready(function(){
   });
 });
 
+AOS.init();
+
 
  // Swiper 2 - Testimonials
   var swiper2 = new Swiper(".testimonialSwiper", {
