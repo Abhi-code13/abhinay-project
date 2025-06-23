@@ -915,6 +915,17 @@ header {
     width: 30%;
 }
 
+.blog-card {
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+
+.blog-card:hover {
+    transform: perspective(800px) rotateY(5deg) rotateX(5deg);
+}
+
 .blog-swiper .swiper-wrapper {
     margin-bottom: 60px;
 }
@@ -923,7 +934,7 @@ header {
     transition: 0.3s ease;
 }
 
-.blog-swiper .swiper-wrapper:hover>.swiper-slide:not(:hover) {
+/* .blog-swiper .swiper-wrapper:hover>.swiper-slide:not(:hover) {
     filter: blur(4px);
     transform: scaleX(0.95);
 }
@@ -931,7 +942,7 @@ header {
 .blog-swiper .swiper-slide:hover {
     transform: scaleX(1.05);
     z-index: 2;
-}
+} */
 
 /* footer */
 

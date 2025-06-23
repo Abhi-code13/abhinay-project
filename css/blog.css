@@ -199,7 +199,7 @@ header {
     transition: 0.3s ease;
 }
 
-.blog .row:hover>.col-33:not(:hover) .blog-card {
+/* .blog .row:hover>.col-33:not(:hover) .blog-card {
     filter: blur(4px);
     transform: scaleX(0.95);
 }
@@ -207,7 +207,7 @@ header {
 .blog .col-33:hover .blog-card {
     transform: scaleX(1.05);
     z-index: 2;
-}
+} */
 
 .pagination {
     display: flex;
