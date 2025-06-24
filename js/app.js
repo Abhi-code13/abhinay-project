@@ -49,10 +49,10 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 3,
     spaceBetween: 30,
     loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //   delay: 2500,
+    //   disableOnInteraction: false
+    // },
     breakpoints: {
       0: {
         slidesPerView: 1,
@@ -106,10 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
       el: ".swiper-pagination",
       clickable: true,
     },
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 2500,
+    //   disableOnInteraction: false,
+    // },
     breakpoints: {
       768: {
         slidesPerView: 2,
