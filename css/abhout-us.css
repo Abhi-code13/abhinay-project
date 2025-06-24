@@ -173,7 +173,7 @@ header {
     padding-top: 75px;
 }
 
-@media screen and (max-width : 991px) {
+ @media screen and (max-width : 991px) {
     .nav-toggler {
         display: block;
         margin-left: auto;
@@ -211,12 +211,80 @@ header {
     }
 
 }
+@media screen and (max-width : 1024px) {
+
+    .cmn-head {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .cmn-para {
+        font-size: 15px;
+    }
+
+    .testimonials {
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width : 768px) {
+
+    .cmn-head {
+        font-size: 26px;
+        margin-bottom: 8px;
+    }
+
+    .cmn-para {
+        font-size: 14px;
+    }
+
+    .testimonials {
+        padding-top: 30px;
+    }
+
+    .navbar-collapse,
+    .navbar-collapse ul {
+        gap: 6px;
+    }
+
+    .navbar-collapse ul li a {
+        font-size: 14px;
+    }
+
+    .nav-btn .btn-hover-effect {
+        font-size: 14px;
+        padding: 13px 25px;
+    }
+}
+
+@media screen and (max-width : 576px) {
+    .cmn-head {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .cmn-para {
+        font-size: 13px;
+    }
+
+    .navbar-collapse,
+    .navbar-collapse ul {
+        gap: 4px;
+    }
+
+    .navbar-collapse ul li a {
+        font-size: 10px;
+    }
+
+    .nav-btn .btn-hover-effect {
+        font-size: 12px;
+        padding: 12px 23px;
+    }
+}
+
+/*
 
 @media screen and (max-width : 1024px) {
-    
-    /* .banner-content {
-        padding-top: 300px;
-    } */
 
     .cmn-head {
         font-size: 30px;
@@ -753,13 +821,10 @@ header {
     .nav-btn a {
         padding: 10px 20px;
         font-size: 14px;
-    }
-
-    /* .banner-section {
-        min-height: 70vh;
     } */
 
-    .banner-content h1 {
+
+    /* .banner-content h1 {
         font-size: 30px;
         line-height: 40px;
     }
@@ -1031,11 +1096,11 @@ header {
 
     footer .row {
         row-gap: 15px;
-    }
+    } */
 
-}
+/* } */
 
-@media screen and (max-width : 320px) {
+/* @media screen and (max-width : 320px) {
 
     .navbar-collapse,
     .navbar-collapse ul {
@@ -1051,9 +1116,6 @@ header {
         padding: 12px 23px;
     }
 
-    /* .banner-section {
-        min-height: 60vh;
-    } */
 
     .cmn-head {
         font-size: 20px;
@@ -1359,4 +1421,4 @@ header {
         max-width: 35px;
     }
 
-}
+} */
