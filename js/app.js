@@ -7,6 +7,8 @@ $(document).ready(function () {
   });
 });
 
+
+
 // document.addEventListener('DOMContentLoaded', function () {
 //   var toggler = document.querySelector('.nav-toggler');
 //   var navMenu = document.querySelector('.navbar-collapse');
