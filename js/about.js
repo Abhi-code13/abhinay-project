@@ -1,6 +1,8 @@
-$(document).ready(function(){
-  $('.nav-toggler').click(function(){
-    $('.navbar-collapse').slideToggle(1000);
+$(document).ready(function () {
+  $('.nav-toggler').click(function () {
+    $('.navbar-collapse').slideToggle(1000);       
+    $('body').toggleClass('menu-open');           
+    $(this).toggleClass('active');               
   });
 });
 
