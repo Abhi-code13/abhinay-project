@@ -9,6 +9,7 @@
 
 
 
+// navbar-toggler 
 $(document).ready(function () {
   $('.nav-toggler').click(function (e) {
     e.preventDefault();
@@ -16,7 +17,6 @@ $(document).ready(function () {
     $('body').toggleClass('menu-open');
     $('.container1').toggleClass('active');
   });
-
 });
 
 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       delay: 4000,
       disableOnInteraction: false,
     },
-    speed: 2500,
+    speed: 1800,
     fadeEffect: {
       crossFade: true, // Optional: smooth transition between slides
     },

@@ -205,9 +205,9 @@ header {
     transform: translateY(-10px) rotate(-45deg);
 }
 
-.active {
+/* .active {
     display: flex !important;
-}
+} */
 
 .navbar-collapse ul li a {
     font-weight: 500;
