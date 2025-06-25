@@ -1,10 +1,34 @@
 
-
-$(document).ready(function(){
-  $('.nav-toggler').click(function(){
-    $('.navbar-collapse').slideToggle(1000);
+$(document).ready(function () {
+  $('.nav-toggler').click(function () {
+    $('.navbar-collapse').slideToggle(1000);       
+    $('body').toggleClass('menu-open');           
+    $(this).toggleClass('active');               
   });
 });
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   var toggler = document.querySelector('.nav-toggler');
+//   var navMenu = document.querySelector('.navbar-collapse');
+//   var body = document.body;
+
+//   toggler.addEventListener('click', function () {
+//     navMenu.classList.toggle('active');       // toggle nav visibility
+//     body.classList.toggle('menu-open');       // disable scroll
+//   });
+// });
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   var toggler = document.querySelector('.nav-toggler');
+//   var navMenu = document.querySelector('.navbar-collapse');
+//   var body = document.body;
+
+//   toggler.addEventListener('click', function () {
+//     navMenu.classList.toggle('active');       // toggle nav visibility
+//     body.classList.toggle('menu-open');       // disable scroll
+//   });
+// });
 
 document.addEventListener('DOMContentLoaded', function () {
   AOS.init();
@@ -79,9 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
       delay: 3000,
       disableOnInteraction: false,
     },
-      breakpoints: {
-      0:{
-        slidesPerView : 1,
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
       },
       768: {
         slidesPerView: 2,
@@ -163,5 +187,5 @@ const observer = new IntersectionObserver(
   }
 );
 
-const section = document.querySelector(".numbers"); 
+const section = document.querySelector(".numbers");
 if (section) observer.observe(section);

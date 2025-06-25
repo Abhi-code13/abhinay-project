@@ -13,6 +13,14 @@
     width: 100%;
 }
 
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+
 html,
 body {
     overflow-x: hidden;
@@ -1304,10 +1312,6 @@ footer .row {
         font-size: 12px;
         padding: 12px 23px;
     }
-
-    /* .banner-content {
-        padding: 60px 0;
-    } */
 
     .banner-section {
         height: 90vh;
