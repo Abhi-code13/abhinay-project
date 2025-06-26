@@ -128,8 +128,62 @@ header {
     color: white;
 }
 
-.nav-toggler.active {
-    color: black;
+/* toggler effect */
+.nav-toggler {
+    position: relative;
+    z-index: 1001;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.container1 {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 24px;
+}
+
+.checkmark {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.checkmark span {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    left: 0;
+    transition: all 0.7s ease-in-out;
+    pointer-events: none;
+}
+
+.checkmark span:nth-child(1) {
+    top: 0;
+}
+
+.checkmark span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.checkmark span:nth-child(3) {
+    bottom: 0;
+}
+
+/* Hamburger animation when active */
+.container1.active .checkmark span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.container1.active .checkmark span:nth-child(2) {
+    opacity: 0;
+}
+
+.container1.active .checkmark span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 .active {
@@ -177,37 +231,73 @@ header {
     .nav-toggler {
         display: block;
         margin-left: auto;
+        z-index: 9999;
     }
 
     .navbar-collapse {
-        position: absolute;
-        display: none;
-        left: 0;
+        position: fixed;
+        top: 0;
         right: 0;
-        top: 50px;
-        padding: 15px 0;
+        width: 70%;
+        height: 100vh;
+        background-color: #123344;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translate(100%, -100%) scale(0.8);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.7s ease, opacity 0.5s ease;
+        padding-top: 80px;
+        
+        z-index: 9998;
+    }
+
+    .navbar-collapse.active {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .navbar-collapse ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-collapse .nav-btn {
+        margin-top: 20px;
     }
 
     .navbar-collapse ul li a {
-        color: #123344;
+        color: white;
     }
 
-    .navbar-collapse,
+    /* .navbar-collapse,
     .navbar-collapse ul {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
-        background: white;
+        gap: 8px;
+        background-color: #123344;
+        padding-top: 100px;
+
     }
 
     .navbar-collapse .nav-btn {
         text-align: center;
         margin-top: 10px;
-    }
+    } */
+
+    /* .banner-content {
+        padding: 100px 0;
+    } */
 
     .banner-content h1 {
         font-size: 40px;
         line-height: 60px;
+    }
+
+    .banner-content p {
+        font-size: 16px;
     }
 
 }
@@ -272,6 +362,10 @@ header {
         gap: 4px;
     }
 
+    .navbar-collapse {
+        width: 100%;
+    }
+
     .navbar-collapse ul li a {
         font-size: 10px;
     }
@@ -279,6 +373,10 @@ header {
     .nav-btn .btn-hover-effect {
         font-size: 12px;
         padding: 12px 23px;
+    }
+
+    .banner-content h1{
+        font-size: 20px;
     }
 }
 
