@@ -1274,11 +1274,10 @@ footer .row {
         pointer-events: none;
         transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s ease-in-out;
         padding-top: 80px;
-        
         z-index: 9998;
     }
 
-    .navbar-collapse.active {
+    .navbar-collapse.active1 {
         transform: translate(0, 0) scale(1);
         opacity: 1;
         pointer-events: auto;

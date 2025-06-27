@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f0f0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #222;
+      color: white;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 999;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      border-radius: 3px;
+      transition: 0.4s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .navlist {
+      list-style: none;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 50%;
+      height: 100vh;
+      background: #333;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      transform: scaleX(0);
+      transform-origin: top;
+      opacity: 0;
+      transition: all 0.5s ease;
+      pointer-events: none;
+    }
+
+    .navlist li {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: all 0.5s ease;
+    }
+
+    .navlist li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.7rem;
+      transition: 0.3s;
+    }
+
+    .navlist li a:hover {
+      color: #00ffb3;
+    }
+
+    .navlist.active1 {
+      transform: scaleY(1);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .navlist.active1 li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .navlist.active1 li:nth-child(1) { transition-delay: 0.1s; }
+    .navlist.active1 li:nth-child(2) { transition-delay: 0.2s; }
+    .navlist.active1 li:nth-child(3) { transition-delay: 0.3s; }
+    .navlist.active1 li:nth-child(4) { transition-delay: 0.4s; }
+    .navlist.active1 li:nth-child(5) { transition-delay: 0.5s; }
+  </style>
+</head>
+<body>
+    <header>
+    <div class="nav-container">
+      <div class="logo">MySite</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="navlist" id="navlist">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navlist = document.getElementById('navlist');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navlist.classList.toggle('active1');
+    });
+  </script>
+</body>
+</html>
