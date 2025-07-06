@@ -10,23 +10,46 @@
 
 
 // navbar-toggler 
+// $(document).ready(function () {
+//   $('.nav-toggler').click(function (e) {
+//     e.preventDefault();
+//     e.stopPropagation();
+//     $('.navbar-collapse').toggleClass('active1');
+//     $('body').toggleClass('menu-open');
+//     $('.container1').toggleClass('active');
+//   });
+
+// $(document).click(function (e) {
+//     if (!$(e.target).closest('.navbar-collapse, .nav-toggler').length) {
+//       $('.navbar-collapse').removeClass('active1');
+//       $('body').removeClass('menu-open');
+//       $('.nav-toggler').removeClass('active');
+//     }
+//   });
+// });
+
 $(document).ready(function () {
   $('.nav-toggler').click(function (e) {
     e.preventDefault();
     e.stopPropagation();
+
     $('.navbar-collapse').toggleClass('active1');
     $('body').toggleClass('menu-open');
     $('.container1').toggleClass('active');
+    $(this).toggleClass('active'); // Add toggle for nav-toggler itself
   });
 
-$(document).click(function (e) {
+  $(document).click(function (e) {
     if (!$(e.target).closest('.navbar-collapse, .nav-toggler').length) {
       $('.navbar-collapse').removeClass('active1');
       $('body').removeClass('menu-open');
+      $('.container1').removeClass('active');
       $('.nav-toggler').removeClass('active');
     }
   });
 });
+
+
 
 
 
@@ -100,7 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 3,
     spaceBetween: 5,
     centeredSlides: true,
-    loop: true,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
