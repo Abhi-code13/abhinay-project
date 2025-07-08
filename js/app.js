@@ -36,7 +36,7 @@ $(document).ready(function () {
     $('.navbar-collapse').toggleClass('active1');
     $('body').toggleClass('menu-open');
     $('.container1').toggleClass('active');
-    $(this).toggleClass('active'); // Add toggle for nav-toggler itself
+    $(this).toggleClass('active'); 
   });
 
   $(document).click(function (e) {
@@ -154,10 +154,10 @@ document.addEventListener("DOMContentLoaded", function () {
       el: ".swiper-pagination",
       clickable: true,
     },
-    // autoplay: {
-    //   delay: 2500,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
     breakpoints: {
       768: {
         slidesPerView: 2,
