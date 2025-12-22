@@ -120,12 +120,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Swiper 2 - Testimonials
   var swiper2 = new Swiper(".testimonialSwiper", {
+    loop: true, 
+    // loopAdditionalSlides: 3,
     slidesPerView: 3,
     spaceBetween: 5,
     centeredSlides: true,
+    grabCursor: true,              
+    watchSlidesProgress: true,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
+      reverseDirection: true,
     },
     breakpoints: {
       0: {
